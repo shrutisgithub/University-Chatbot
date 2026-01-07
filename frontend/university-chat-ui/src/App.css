@@ -1,0 +1,462 @@
+/* ===========================
+   ROOT LAYOUT & HEADER
+   =========================== */
+.app-root {
+  color: #e5e7eb;
+  background: radial-gradient(circle at top, #020617 0%, #020617 40%, #000000 100%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 72px;
+  padding: 0 28px;
+  background: rgba(2, 6, 23, 0.9);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.8);
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.7);
+}
+
+.app-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  font-size: 1.05rem;
+}
+
+.logo-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 999px;
+  background: conic-gradient(
+    from 180deg,
+    #f97316,
+    #fb7185,
+    #6366f1,
+    #22d3ee,
+    #f97316
+  );
+  box-shadow: 0 0 18px rgba(251, 113, 133, 0.7);
+}
+
+.app-main {
+  flex: 1;
+  display: flex;
+}
+
+/* user info in header (after login) */
+
+.app-header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.user-chip {
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.6);
+  font-size: 0.78rem;
+  color: #e5e7eb;
+}
+
+.tab-btn {
+  border-radius: 999px;
+  padding: 6px 12px;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  background: rgba(15, 23, 42, 0.9);
+  color: #e5e7eb;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.tab-btn:hover {
+  background: rgba(30, 64, 175, 0.8);
+}
+
+/* ===========================
+   AUTH PAGE (purple card style)
+   =========================== */
+
+.auth-layout {
+  width: 100%;
+  height: calc(100vh - 72px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 540px;
+  padding: 32px 40px 26px;
+  background: radial-gradient(circle at top left, #020617 0%, #020617 35%, #020617 100%);
+  border-radius: 26px;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  box-shadow:
+    0 24px 60px rgba(0, 0, 0, 0.85),
+    0 0 0 1px rgba(15, 23, 42, 0.9);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* header text inside card */
+
+.auth-header-top {
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.auth-title-main {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #f9fafb;
+  margin: 0 0 4px;
+}
+
+.auth-subtitle-main {
+  color: #94a3b8;
+  font-size: 0.88rem;
+}
+
+/* form layout */
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 8px;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.auth-label {
+  font-size: 0.85rem;
+  color: #e2e8f0;
+}
+
+.form-row input {
+  padding: 12px 15px;
+  background: #020617;
+  color: #f1f5f9;
+  border: 1px solid #1e293b;
+  border-radius: 999px;
+  outline: none;
+  transition: all 0.16s ease;
+  font-size: 0.94rem;
+}
+
+.form-row input::placeholder {
+  color: #6b7280;
+}
+
+.form-row input:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.4);
+}
+
+/* primary submit button (purple pill) */
+
+.auth-submit {
+  margin-top: 6px;
+  padding: 12px 0;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 0.96rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #7c3aed, #6366f1, #06b6d4);
+  color: white;
+  transition: 0.18s ease;
+  box-shadow: 0 12px 26px rgba(79, 70, 229, 0.55);
+}
+
+.auth-submit:hover:enabled {
+  transform: translateY(-1px);
+  box-shadow: 0 16px 32px rgba(79, 70, 229, 0.7);
+}
+
+.auth-submit:disabled {
+  opacity: 0.7;
+  cursor: default;
+  box-shadow: none;
+}
+
+/* error message */
+
+.auth-error {
+  padding: 10px 12px;
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  border-radius: 12px;
+  font-size: 0.84rem;
+  color: #fecaca;
+}
+
+/* sign in / sign up switch text */
+
+.auth-footer-switch {
+  text-align: center;
+  margin-top: 12px;
+  font-size: 0.84rem;
+  color: #94a3b8;
+}
+
+.link-btn {
+  border: none;
+  background: none;
+  color: #a5b4fc;
+  cursor: pointer;
+  text-decoration: underline;
+  margin-left: 4px;
+  font-size: 0.84rem;
+}
+
+.link-btn:hover {
+  color: #c7d2fe;
+}
+
+/* ===========================
+   CHAT UI (simple dark layout)
+   =========================== */
+
+.chat-layout {
+  flex: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(280px, 0.8fr);
+  gap: 18px;
+  padding: 24px;
+}
+
+.chat-panel {
+  display: flex;
+  flex-direction: column;
+  background: radial-gradient(circle at top left, #020617, #020617 45%, #020617 100%);
+  border-radius: 22px;
+  border: 1px solid rgba(30, 64, 175, 0.6);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.9);
+  padding: 18px 18px 14px;
+}
+
+.chat-suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.chip {
+  border-radius: 999px;
+  padding: 6px 10px;
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  background: rgba(15, 23, 42, 0.9);
+  font-size: 0.78rem;
+  cursor: pointer;
+  color: #e5e7eb;
+}
+
+.chip:hover {
+  background: rgba(30, 64, 175, 0.9);
+}
+
+.chat-window {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.chat-row {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.chat-row.user {
+  justify-content: flex-end;
+}
+
+.chat-row.user .bubble {
+  background: linear-gradient(135deg, #4f46e5, #0ea5e9);
+}
+
+.chat-row.bot .bubble {
+  background: #020617;
+}
+
+/* .avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  background: #0f172a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.68rem;
+  color: #e5e7eb;
+  border: 1px solid rgba(148, 163, 184, 0.5);
+} */
+
+.bubble {
+  max-width: 80%;
+  padding: 8px 12px;
+  border-radius: 16px;
+  font-size: 0.88rem;
+  color: #e5e7eb;
+  border: 1px solid rgba(30, 64, 175, 0.3);
+}
+
+.chat-input-bar {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(30, 64, 175, 0.5);
+}
+
+.chat-input {
+  flex: 1;
+  background: #020617;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  padding: 10px 14px;
+  border-radius: 999px;
+  color: #e5e7eb;
+  outline: none;
+  font-size: 0.9rem;
+}
+
+.chat-input:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 1px rgba(99, 102, 241, 0.6);
+}
+
+.send-btn {
+  background: linear-gradient(135deg, #6366f1, #22c55e);
+  border: none;
+  padding: 0 18px;
+  border-radius: 999px;
+  color: white;
+  cursor: pointer;
+  font-size: 0.88rem;
+  font-weight: 500;
+}
+
+.chat-hint {
+  margin-top: 6px;
+  font-size: 0.74rem;
+  color: #64748b;
+}
+
+/* right info panel */
+
+.info-panel {
+  padding: 18px 18px 14px;
+  border-radius: 22px;
+  background: #020617;
+  border: 1px solid rgba(15, 23, 42, 0.9);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.9);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 0.88rem;
+}
+
+.info-panel h2 {
+  margin: 0 0 4px;
+  font-size: 1rem;
+  color: #e5e7eb;
+}
+
+/* Header right side layout */
+.app-header-right {
+  display: flex;
+  align-items: center;
+}
+
+.auth-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* User name pill */
+.user-chip {
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #e2e8f0;
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 6px 14px rgba(15, 23, 42, 0.7);
+  transition: all 0.2s ease;
+}
+
+.user-chip:hover {
+  background: rgba(30, 64, 175, 0.9);
+  border-color: rgba(94, 234, 212, 0.8);
+  transform: translateY(-1px);
+}
+
+/* Sign Out button */
+.tab-btn {
+  padding: 8px 18px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #f9fafb;
+  background: linear-gradient(135deg, #ec4899, #6366f1);
+  box-shadow: 0 8px 18px rgba(99, 102, 241, 0.6);
+  transition: all 0.2s ease;
+}
+
+.tab-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 26px rgba(99, 102, 241, 0.8);
+  filter: brightness(1.05);
+}
+.message-row .message {
+  padding: 12px 16px;
+  border-radius: 14px;
+  max-width: 75%;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+.auth-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+/* Big title above the auth card */
+.landing-title {
+  font-size: 2.1rem;
+  font-weight: 400;
+  color: #f9fafb;
+  text-align: center;
+  margin-bottom: 5px;
+}
+.no-header {
+  padding-top: 0;
+  height: 100vh;
+}
+

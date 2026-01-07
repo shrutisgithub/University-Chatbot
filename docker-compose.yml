@@ -1,0 +1,32 @@
+version: "3.8"
+
+services:
+  chatbot-service:
+    build: ./backend/chatbot-service
+    container_name: chatbot-service
+    ports:
+      - "5001:5001"
+
+  auth-service:
+    build: ./backend/auth-service
+    container_name: auth-service
+    ports:
+      - "5003:5003"
+
+
+  gateway:
+    build: ./backend/gateway
+    container_name: gateway
+    depends_on:
+      - chatbot-service
+      - auth-service
+    ports:
+      - "5000:5000"
+
+  frontend:
+    build: ./frontend/university-chat-ui
+    container_name: university-chat-frontend
+    depends_on:
+      - gateway
+    ports:
+      - "3000:3000"
